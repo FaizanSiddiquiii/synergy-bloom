@@ -23,21 +23,15 @@ export const Header = () => {
           <nav className="hidden md:flex items-center space-x-6">
             <Link 
               to="/" 
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-300"
             >
               Home
             </Link>
             <Link 
               to="/products" 
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-300"
             >
               Products
-            </Link>
-            <Link 
-              to="/categories" 
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-            >
-              Categories
             </Link>
           </nav>
 

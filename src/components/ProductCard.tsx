@@ -25,14 +25,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Card 
-      className="group glass-card hover:glow-effect transition-all duration-300 cursor-pointer overflow-hidden"
+      className="group glass-card hover:glow-effect transition-all duration-500 cursor-pointer overflow-hidden hover:scale-[1.02]"
       onClick={handleCardClick}
     >
       <div className="relative overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.src = `https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop`;
@@ -50,7 +50,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       <CardContent className="p-4">
-        <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
+        <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors duration-300">
           {product.name}
         </h3>
         <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
@@ -69,7 +69,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <CardFooter className="p-4 pt-0">
         <Button 
           onClick={handleAddToCart}
-          className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
+          className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 hover:scale-105"
         >
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart

@@ -44,39 +44,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Categories Section */}
-      <section className="py-16 px-4 lg:px-6 bg-muted/20">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Shop by <span className="gradient-text">Category</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['Course', 'Toolkit', 'Guide', 'Bundle'].map((category) => (
-              <div 
-                key={category}
-                className="glass-card p-6 text-center hover:glow-effect transition-all duration-300 cursor-pointer group"
-                onClick={() => navigate(`/products?category=${category.toLowerCase()}`)}
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">
-                    {category.charAt(0)}
-                  </span>
-                </div>
-                <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                  {category}s
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {products.filter(p => p.category === category).length} products
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { ArrowRight, Download, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Counter } from '@/components/Counter';
 import { useNavigate } from 'react-router-dom';
 
 export const Hero = () => {
@@ -46,28 +47,36 @@ export const Hero = () => {
               variant="outline" 
               size="lg"
               className="border-primary/30 hover:bg-primary/10 transition-all duration-300"
-              onClick={() => navigate('/categories')}
+              onClick={() => navigate('/products')}
             >
-              Browse Categories
+              Browse Products
             </Button>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto animate-slide-up delay-500">
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-primary">100+</div>
+              <div className="text-2xl md:text-3xl font-bold text-primary">
+                <Counter target={150} suffix="+" />
+              </div>
               <div className="text-sm text-muted-foreground">Digital Products</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent">50K+</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent">
+                <Counter target={25000} suffix="+" />
+              </div>
               <div className="text-sm text-muted-foreground">Happy Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-primary">24/7</div>
+              <div className="text-2xl md:text-3xl font-bold text-primary">
+                <Counter target={24} suffix="/7" />
+              </div>
               <div className="text-sm text-muted-foreground">Support</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent">4.9★</div>
+              <div className="text-2xl md:text-3xl font-bold text-accent">
+                <Counter target={4.9} suffix="★" />
+              </div>
               <div className="text-sm text-muted-foreground">Rating</div>
             </div>
           </div>
