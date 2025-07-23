@@ -140,7 +140,8 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite alternate',
 				'slide-up': 'slide-up 0.5s ease-out',
-				'scale-in': 'scale-in 0.3s ease-out'
+				'scale-in': 'scale-in 0.3s ease-out',
+				'bounce': 'bounce 1s infinite'
 			}
 		}
 	},
