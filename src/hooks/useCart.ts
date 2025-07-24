@@ -35,24 +35,28 @@ export const useCart = () => {
       
       let newItems: CartItem[];
       if (existingItemIndex >= 0) {
-        // Update existing item
+        // Update existing item - add to existing quantity
         newItems = prevCart.items.map((item, index) => 
           index === existingItemIndex 
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
+        
+        toast({
+          title: "Updated cart",
+          description: `${product.name} quantity updated in your cart.`,
+        });
       } else {
         // Add new item
         newItems = [...prevCart.items, { product, quantity }];
+        
+        toast({
+          title: "Added to cart",
+          description: `${product.name} has been added to your cart.`,
+        });
       }
 
       const newTotal = calculateTotal(newItems);
-      
-      toast({
-        title: "Added to cart",
-        description: `${product.name} has been added to your cart.`,
-      });
-
       return { items: newItems, total: newTotal };
     });
   };

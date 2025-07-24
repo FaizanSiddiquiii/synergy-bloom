@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Preloader } from "@/components/Preloader";
+
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 import { PageTransition } from "@/components/PageTransition";
 import { Home } from "./pages/Home";
@@ -23,7 +23,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <Preloader />
+      
       <BrowserRouter>
         <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95 relative">
           <BackgroundPattern />

@@ -10,32 +10,23 @@ export const Counter = ({ target, duration = 2000, suffix = '' }: CounterProps) 
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let startTime: number;
-    let animationFrame: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const elapsed = currentTime - startTime;
+    const startTime = Date.now();
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
-
+      
       // Ease out animation
       const easeOut = 1 - Math.pow(1 - progress, 3);
       const currentCount = Math.floor(easeOut * target);
       
       setCount(currentCount);
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
+      
+      if (progress >= 1) {
+        clearInterval(interval);
       }
-    };
+    }, 16); // ~60fps
 
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
+    return () => clearInterval(interval);
   }, [target, duration]);
 
   return (
